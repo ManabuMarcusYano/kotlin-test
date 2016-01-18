@@ -23,7 +23,7 @@ class ScrollingActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_scrolling, menu)
+        getMenuInflater().inflate(R.menu.menu_scrolling, menu)
         return true
     }
 
@@ -31,12 +31,12 @@ class ScrollingActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        val id = item.itemId
+        val id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true
         }
-        return super.onOptionsItemSelected(item)
+        return super<AppCompatActivity>.onOptionsItemSelected(item)
     }
 }
